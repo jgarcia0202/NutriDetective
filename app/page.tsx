@@ -2,7 +2,9 @@
 
 import { useState } from 'react';
 import 'typeface-playfair-display';
+import listItem from './listItem';
 
+const key = 9973533
 export default function Home() {
   const [recipes, setRecipes] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -10,7 +12,7 @@ export default function Home() {
   const fetchRecipes = async () => {
     try {
       const response = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`
+        `https://www.themealdb.com/api/json/v2/9973533/search.php?s=${searchTerm}`
       );
 
       if (!response.ok) {
